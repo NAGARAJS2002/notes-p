@@ -2,6 +2,7 @@ import express from "express"
 import env from "dotenv"
 import mongoose from "mongoose";
 import authRouter from "./routes/authRoute.js"
+import userRouter from "./routes/userRoute.js"
 env.config();
 const app = express();
 const port = 3000;
@@ -22,6 +23,7 @@ app.listen(port ,()=>{
 
 
 app.use('/api/auth/',authRouter);
+app.use('/api/user/',userRouter);
 
 
 
