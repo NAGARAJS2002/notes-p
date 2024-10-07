@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../components/OAuth';
 
 
-export default function SignUp() {
+export default function RegisterPage() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -41,7 +42,7 @@ export default function SignUp() {
   };
   return (
     <div className='p-3 max-w-lg mx-auto'>
-           <h1 className='text-5xl text-center font-bold my-7'>Notes</h1>
+          <Link to={'/'} > <h1 className='text-5xl text-center font-bold my-7'>Notes</h1></Link>
       <h1 className='text-3xl text-center font-semibold my-7'>Register</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
@@ -72,6 +73,7 @@ export default function SignUp() {
         >
           {loading ? 'Loading...' : 'Register'}
         </button>
+        <OAuth/>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Have an account?</p>
